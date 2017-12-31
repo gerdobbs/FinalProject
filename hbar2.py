@@ -7,8 +7,6 @@ import pandas as pd
 import xml.etree.ElementTree as etree
 import pprint
 
-##################################################################################################################################
-
 pp = pprint.PrettyPrinter(indent=4)
 root = etree.parse('IREvNZL Events.xml')
 doc = root.getroot()
@@ -26,6 +24,7 @@ temp_dict = {}
 each_code = [] #Will include a list of each code x number of times it appears
 all_codes = []
 all_counts = [] # Will include the number assigned to the code x how many times that code appears
+colors = []
 overall_code_count = 39
 #TODO get count of codes
 all_starts = []
@@ -62,30 +61,15 @@ for i in rootInstance.iterfind('instance'):
         all_counts.extend([overall_code_count]*count)
         count = 0
         overall_code_count -= 1
-#print(codes_list)
-#all_counts.sort()
-#print(all_counts)
-###############################################################################
-colors = []
+
 for code in all_codes:
-    #print(code[0:4])
     if 'NZL' in code:
-        #print("New")
         colors.append("Black")
     elif 'IRE' in code:
-        #print("IRE")
         colors.append("Lime")
     else:
-        #print("Neither")
         colors.append(("White"))
 
-##############################################################################
-codeDF = pd.DataFrame(
-    {'Code': list(codes_set),
-     'Count': codes_count
-   })
-#print(codeDF)
-#Get the mid point of each rectangle by getting average of start and end times
 def centre(a,b):
     list = [(float(a[i]) + float(b[i]))/2 for i in range(len(a))]
     return list
@@ -95,36 +79,18 @@ def get_width(a,b):
     list = [(float(b[i]) - float(a[i]))/1 for i in range(len(a))]
     return list
 
-#source = ColumnDataSource(dict(x=centre(all_starts,all_ends), y=all_counts, w=get_width(all_starts,all_ends), h=[0.6]*len(all_counts)))
-#################################################################################################################
-print("codes_list: Length: "+str(len(codes_list)))
-print(codes_list)
-print("all_counts: Length: "+str(len(all_counts)))
-print(all_counts)
-print("all_ends: Length: "+str(len(all_ends)))
-print(all_ends)
-print("all_starts: Length: "+str(len(all_starts)))
-print(all_starts)
-print("colors: Length: "+str(len(colors)))
-print(colors)
-print()
-#data = {'y':all_counts,'right':all_ends,'left':all_starts,'codes':all_counts}
-##################################################################################################################################
-
 x=all_ends
 code=all_counts
 left = all_starts
 data = {'x':x,'y':code,'left':left,'colors':colors}
 print(data['y'])
 source = ColumnDataSource(data)
-#source = ColumnDataSource(data=dict(y=y, right=x,left=left))
+
 callback = CustomJS(args=dict(source=source), code="""
        var data = source.data,
         //gets id of selected point ie. index of point created
         selected = source.selected['1d']['indices'],
         select_inds = [selected[0]];
-        //window.alert(select_inds)
-        //window.alert(data['x'])
     if(selected.length == 1){
         // only consider case where one glyph is selected by user
         selected_x = data['x'][selected[0]]
@@ -142,45 +108,36 @@ callback = CustomJS(args=dict(source=source), code="""
             country="Neither"
         }
         window.alert("Start = "+selected_left+"ms , End = "+selected_x+"ms , Code = " + selected_y+" , Country = "+country)
-        for (var i = 0; i < data['x'].length; ++i){
-            if(data['left'][i] == selected_left){
+        //for (var i = 0; i < data['x'].length; ++i){
+           // if(data['left'][i] == selected_left){
                 // add all points to selected if their ids coincide with original
                 // glyph that was clicked.
-                select_inds.push(i)
-            }
-        }
+               // select_inds.push(i)
+            //}
+       // }
     }
-    
-    //window.alert(select_inds)
-    source.selected['1d']['indices'] = select_inds 
-    source.change.emit();
+    //source.selected['1d']['indices'] = select_inds 
+   // source.change.emit();
 
     """)
 
 hover = HoverTool(tooltips="""
-
         <div bgcolor="#E6E6FA">
             <span style="font-size: 10px; font-weight: bold;">Code = @y</span></br>
             <span style="font-size: 8px; color: #966;">Start = @left</span></br>
             <span style="font-size: 8px; color: #966;">End = @x</span></br>
         </div>
-    """
-                  )
-
-
+    """)
 
 taptool = TapTool(callback=callback)
 xdr = DataRange1d()
 ydr = DataRange1d()
-#######################################
 
 #plot = Plot(
- #   title=None, x_range= Range1d(plot_start-10,plot_end+10), y_range=Range1d(0,len(codes_set)+2), plot_width=800, plot_height=400,
-  #  h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
-############################
-
+  #  title=None, x_range= Range1d(plot_start-5,plot_end+5), y_range=Range1d(0,len(codes_set)+2), plot_width=900, plot_height=400,
+   # h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
 plot = Plot(
-    title=None, x_range=xdr, y_range=ydr, plot_width=900, plot_height=400,
+    title=None, x_range= xdr, y_range=ydr, plot_width=900, plot_height=400,
     h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
 plot.add_tools(taptool)
 plot.add_tools(ResetTool())
@@ -203,12 +160,3 @@ curdoc().add_root(plot)
 
 show(plot)
 
-"""
-// get data source from Callback args
-        var data = source.data;
-        var f = cb_obj.get('value');
-        var r = origin.get('data')[f];
-        window.alert("r");
-        // trigger update of data source
-        source.trigger('change');
-"""
