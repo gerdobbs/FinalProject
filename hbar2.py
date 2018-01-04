@@ -1,8 +1,9 @@
-from bokeh.models import ColumnDataSource, DataRange1d, Range1d,Plot, LinearAxis, Grid,SingleIntervalTicker,ResetTool,\
-    BoxSelectTool,HoverTool, BoxZoomTool, WheelPanTool,WheelZoomTool, TapTool,PanTool,CustomJS
+from bokeh.models import Text, ColumnDataSource, DataRange1d, Range1d,Plot, LinearAxis, Grid,SingleIntervalTicker,ResetTool,\
+    BoxSelectTool,CrosshairTool,HoverTool, BoxZoomTool, WheelPanTool,WheelZoomTool, TapTool,PanTool,CustomJS, ZoomInTool,ZoomOutTool
 from bokeh.models.glyphs import Rect, HBar
 from bokeh.io import curdoc, output_notebook,show
 from bokeh.plotting import figure, curdoc,output_file,show
+from bokeh.layouts import gridplot
 import pandas as pd
 import xml.etree.ElementTree as etree
 import pprint
@@ -10,6 +11,7 @@ import pprint
 file = 'IREvNZL Events.xml'
 team1 = file[0:3]
 team2 = file[4:7]
+title = file[0:7]
 pp = pprint.PrettyPrinter(indent=4)
 root = etree.parse(file)
 doc = root.getroot()
@@ -70,6 +72,7 @@ for i in rootInstance.iterfind('instance'):
         all_counts.extend([overall_code_count]*count)
         count = 0
         overall_code_count -= 1
+
 #Creare a list for the team associated with each event and a colour for that team
 team_list = []
 for code in all_codes:
@@ -160,19 +163,27 @@ taptool = TapTool(callback=callback)
 xdr = DataRange1d()
 ydr = DataRange1d()
 
+
+
+
 #plot = Plot(
   #  title=None, x_range= Range1d(plot_start-5,plot_end+5), y_range=Range1d(0,len(codes_set)+2), plot_width=900, plot_height=400,
    # h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
 plot = Plot(
-    title=None, x_range= xdr, y_range=ydr, plot_width=850, plot_height=300,
+    title=None, x_range= xdr, y_range=ydr, plot_width=850, plot_height=250,
     h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="left",background_fill_color="green")
+
 plot.add_tools(taptool)
 plot.add_tools(ResetTool())
 plot.add_tools(hover)
-plot.add_tools(BoxSelectTool(dimensions="width"))
+#plot.add_tools(BoxSelectTool(dimensions="width"))
 plot.add_tools(BoxZoomTool())
+plot.add_tools(CrosshairTool())
+plot.add_tools(ZoomOutTool())
+plot.add_tools(ZoomInTool())
 glyph = HBar(y="y", right="x", left="left", height=0.5, fill_color="colors")
 plot.add_glyph(source, glyph)
+
 
 xaxis = LinearAxis()
 plot.add_layout(xaxis, 'below')
@@ -180,8 +191,32 @@ yaxis = LinearAxis()
 #plot.add_layout(yaxis, 'left')
 plot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
 plot.add_layout(Grid(dimension=1, ticker=yaxis.ticker))
+
+yaxis_offset = 0.5
+code_index = len(codes_list)-1
+print(codes_list)
+for code in codes_list:
+    text = Text(x=-15,y=yaxis_offset,text=[codes_list[code_index][0:20]],text_font_size = "4pt", text_font_style = "normal",
+                text_color= "Black",text_baseline="alphabetic")
+    plot.add_glyph(text)
+    yaxis_offset += 1
+    code_index -= 1
+
+title1 = Text(x=-0,y=40,text=[title],text_font_size = "8pt", text_font_style = "bold",
+              text_alpha=1.0,text_font='helvetica',text_color= "Black",text_baseline="alphabetic")
+plot.add_glyph(title1)
+plot.ygrid.grid_line_color = "navy"
+plot.ygrid.minor_grid_line_color = 'navy'
+plot.ygrid.minor_grid_line_alpha = 0.1
+
+plot.ygrid.grid_line_alpha = 0.1
+#plot.ygrid.grid_line_dash = [6, 4]
 plot.xgrid.grid_line_color = None
-plot.ygrid.grid_line_color = None
+#plot.ygrid.grid_line_color = None
+plot.axis.major_tick_out = 3
+plot.axis.minor_tick_in = -3
+plot.axis.minor_tick_out = 2
+
 curdoc().add_root(plot)
 show(plot)
 
