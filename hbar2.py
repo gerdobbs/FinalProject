@@ -1,10 +1,10 @@
-from bokeh.models import Text, ColumnDataSource, DataRange1d, Range1d,Plot, LinearAxis, Grid,SingleIntervalTicker,ResetTool,\
-    BoxSelectTool,CrosshairTool,HoverTool, BoxZoomTool, WheelPanTool,WheelZoomTool, TapTool,PanTool,CustomJS, ZoomInTool,ZoomOutTool
+from bokeh.models import Text, ColumnDataSource, DataRange1d, Range1d, Plot, LinearAxis, Grid, SingleIntervalTicker, \
+    ResetTool, BoxSelectTool, CrosshairTool, HoverTool, BoxZoomTool, WheelPanTool, WheelZoomTool, TapTool, PanTool, \
+    CustomJS, ZoomInTool, ZoomOutTool
 from bokeh.models.glyphs import Rect, HBar
-from bokeh.io import curdoc, output_notebook,show
-from bokeh.plotting import figure, curdoc,output_file,show
+from bokeh.io import curdoc, output_notebook, show
+from bokeh.plotting import figure, curdoc, output_file, show
 from bokeh.layouts import gridplot
-import pandas as pd
 import xml.etree.ElementTree as etree
 import pprint
 
@@ -22,13 +22,13 @@ codes_count = []
 start = []
 end = []
 all_info = {}
-count = 0       # Used to store how mant times each code appears
-code_list =[]
+count = 0  # Used to store how mant times each code appears
+code_list = []
 entire_codes = []
 temp_dict = {}
-each_code = [] #Will include a list of each code x number of times it appears
+each_code = []  # Will include a list of each code x number of times it appears
 all_codes = []
-all_counts = [] # Will include the number assigned to the code x how many times that code appears
+all_counts = []  # Will include the number assigned to the code x how many times that code appears
 colors = []
 overall_code_count = 0
 all_starts = []
@@ -36,44 +36,44 @@ all_ends = []
 plot_start = 200000
 plot_end = 0
 
-#Get the count of how many distinctive codes there are
+# Get the count of how many distinctive codes there are
 for i in rootInstance.iterfind('instance'):
     if i.findtext('code') not in codes_set:
-        codes_set.add(i.findtext('code'))#First time to see code
+        codes_set.add(i.findtext('code'))  # First time to see code
         overall_code_count += 1
 codes_set = set()
-#Extract all relevant data from xml file
+# Extract all relevant data from xml file
 for i in rootInstance.iterfind('instance'):
-    if i.findtext('code') not in codes_set:             #First time to see code
+    if i.findtext('code') not in codes_set:  # First time to see code
         codes_set.add(i.findtext('code'))
-        temp_dict['code']=i.findtext('code')            #Add new code to dictionary
+        temp_dict['code'] = i.findtext('code')  # Add new code to dictionary
         codes_list.append(i.findtext('code'))
-        for j in rootInstance.iterfind('instance'):     #Loop through codes again
-            if i.findtext('code') == j.findtext('code'):#Code == one in outer loop
-                count+=1
-                start.append(round(float(j.findtext('start'))))       #Add start time to list of starts for that code
-                if float(j.findtext('start'))<plot_start:
-                    plot_start = float(j.findtext('start'))#round(2.675, 2)
+        for j in rootInstance.iterfind('instance'):  # Loop through codes again
+            if i.findtext('code') == j.findtext('code'):  # Code == one in outer loop
+                count += 1
+                start.append(round(float(j.findtext('start'))))  # Add start time to list of starts for that code
+                if float(j.findtext('start')) < plot_start:
+                    plot_start = float(j.findtext('start'))
                 end.append(round(float(j.findtext('end'))))
-                if float(j.findtext('end'))>plot_end:
+                if float(j.findtext('end')) > plot_end:
                     plot_end = float(j.findtext('end'))
-            each_code = [i.findtext('code')]*count      #Make list of the code x number of times it appears
-        all_codes.extend(each_code)                     #Add the list of each code to list of all codes
-        temp_dict['count']=count
+            each_code = [i.findtext('code')] * count  # Make list of the code x number of times it appears
+        all_codes.extend(each_code)  # Add the list of each code to list of all codes
+        temp_dict['count'] = count
         codes_count.append(count)
-        temp_dict['start'] = start                      #Add list of start times as value to start key in dict
+        temp_dict['start'] = start  # Add list of start times as value to start key in dict
         temp_dict['end'] = end
-        code_list.append(temp_dict.copy())              #Add full dict to list
-        temp_dict.clear()                               #Clear for next iteration
+        code_list.append(temp_dict.copy())  # Add full dict to list
+        temp_dict.clear()  # Clear for next iteration
         all_starts.extend(start)
         all_ends.extend((end))
         start = []
         end = []
-        all_counts.extend([overall_code_count]*count)
+        all_counts.extend([overall_code_count] * count)
         count = 0
         overall_code_count -= 1
 
-#Creare a list for the team associated with each event and a colour for that team
+# Creare a list for the team associated with each event and a colour for that team
 team_list = []
 team_color =['Lime','Black']
 for code in all_codes:
@@ -86,34 +86,41 @@ for code in all_codes:
     else:
         colors.append(("White"))
         team_list.append('Neither')
-#Get centre point between start and end times. Used to plot rect
-def centre(a,b):
-    list = [(float(a[i]) + float(b[i]))/2 for i in range(len(a))]
+
+
+# Get centre point between start and end times. Used to plot rect
+def centre(a, b):
+    list = [(float(a[i]) + float(b[i])) / 2 for i in range(len(a))]
     return list
-#Get the width of each rect by subtracting end time from start time
-def get_width(a,b):
-    list = [(float(b[i]) - float(a[i]))/1 for i in range(len(a))]
+
+
+# Get the width of each rect by subtracting end time from start time
+def get_width(a, b):
+    list = [(float(b[i]) - float(a[i])) / 1 for i in range(len(a))]
     return list
-#Make a list of the total number of each code
+
+
+# Make a list of the total number of each code
 counts_list = []
-count1=0
-position=0
+count1 = 0
+position = 0
 for code in all_codes:
-    g = code            #g is the code to check through resr of list for in order to count
-    for code1 in all_codes[position:len(all_codes)]: # loop through rest of list for same code
-        if code1 == g:                               # if code matches count it
+    g = code  # g is the code to check through resr of list for in order to count
+    for code1 in all_codes[position:len(all_codes)]:  # loop through rest of list for same code
+        if code1 == g:  # if code matches count it
             count1 += 1
-            #position += position
+            # position += position
     position = position + count1
-    counts_list.extend([count1]*count1)
+    counts_list.extend([count1] * count1)
     count1 = 0
-#Set up ColumnDataSource to be used in plotting graph
-x=all_ends
-code=all_counts
+# Set up ColumnDataSource to be used in plotting graph
+x = all_ends
+code = all_counts
 left = all_starts
-data = {'x':x,'y':code,'left':left,'colors':colors,'all_codes':all_codes,'counts_list':counts_list,'team_list':team_list}
+data = {'x': x, 'y': code, 'left': left, 'colors': colors, 'all_codes': all_codes, 'counts_list': counts_list,
+        'team_list': team_list}
 source = ColumnDataSource(data)
-#Callbach function used when graph ber is clicked.
+# Callbach function used when graph ber is clicked.
 callback = CustomJS(args=dict(source=source), code="""
        var data = source.data,
         //gets id of selected point ie. index of point created
@@ -150,7 +157,7 @@ callback = CustomJS(args=dict(source=source), code="""
    // source.change.emit();
 
     """)
-#Display details whwn graph bar is hovered over. Hover Tool.
+# Display details whwn graph bar is hovered over. Hover Tool.
 hover = HoverTool(tooltips="""
         <div bgcolor="#E6E6FA">
             <span style="font-size: 10px; font-weight: bold;">Code = @all_codes</span></br>
@@ -163,17 +170,18 @@ hover = HoverTool(tooltips="""
 taptool = TapTool(callback=callback)
 xdr = DataRange1d()
 ydr = DataRange1d()
-#plot = Plot(
-  #  title=None, x_range= Range1d(plot_start-5,plot_end+5), y_range=Range1d(0,len(codes_set)+2), plot_width=900, plot_height=400,
-   # h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
+# plot = Plot(
+#  title=None, x_range= Range1d(plot_start-5,plot_end+5), y_range=Range1d(0,len(codes_set)+2), plot_width=900, plot_height=400,
+# h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
+plot_height = 250
 plot = Plot(
-    title=None, x_range= xdr, y_range=ydr, plot_width=850, plot_height=250,
-    h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="left",background_fill_color="green")
+    title=None, x_range=xdr, y_range=ydr, plot_width=850, plot_height=plot_height,
+    h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="left", background_fill_color="green")
 
 plot.add_tools(taptool)
 plot.add_tools(ResetTool())
 plot.add_tools(hover)
-#plot.add_tools(BoxSelectTool(dimensions="width"))
+# plot.add_tools(BoxSelectTool(dimensions="width"))
 plot.add_tools(BoxZoomTool())
 plot.add_tools(CrosshairTool())
 plot.add_tools(ZoomOutTool())
@@ -188,19 +196,20 @@ plot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
 plot.add_layout(Grid(dimension=1, ticker=yaxis.ticker))
 
 yaxis_offset = 0.5
-code_index = len(codes_list)-1
+code_index = len(codes_list) - 1
 for code in codes_list:
-    text = Text(x=-150,y=yaxis_offset,text=[codes_list[code_index][0:30]],text_font_size = "4pt", text_font_style = "normal",
-                text_color= "Black",text_baseline="alphabetic")
+    text = Text(x=-150, y=yaxis_offset, text=[codes_list[code_index][0:30]], text_font_size="4pt",
+                text_font_style="normal",
+                text_color="Black", text_baseline="alphabetic")
     plot.add_glyph(text)
     yaxis_offset += 1
     code_index -= 1
-home_title = Text(x=-150,y=40,text=[team1],text_font_size = "8pt", text_font_style = "bold",
-              text_alpha=1.0,text_font='helvetica',text_color= team_color[0],text_baseline="alphabetic")
-versus = Text(x=0,y=40,text=['v'],text_font_size = "8pt", text_font_style = "bold",
-              text_alpha=1.0,text_font='helvetica',text_color= 'White',text_baseline="alphabetic")
-away_title = Text(x=70,y=40,text=[team2],text_font_size = "8pt", text_font_style = "bold",
-              text_alpha=1.0,text_font='helvetica',text_color= team_color[1],text_baseline="alphabetic")
+home_title = Text(x=-150, y=plot_height - 210, text=[team1], text_font_size="8pt", text_font_style="bold",
+                  text_alpha=1.0, text_font='helvetica', text_color=team_color[0], text_baseline="alphabetic")
+versus = Text(x=0, y=plot_height - 210, text=['v'], text_font_size="8pt", text_font_style="bold",
+              text_alpha=1.0, text_font='helvetica', text_color='White', text_baseline="alphabetic")
+away_title = Text(x=70, y=plot_height - 210, text=[team2], text_font_size="8pt", text_font_style="bold",
+                  text_alpha=1.0, text_font='helvetica', text_color=team_color[1], text_baseline="alphabetic")
 plot.add_glyph(home_title)
 plot.add_glyph(versus)
 plot.add_glyph(away_title)
@@ -214,4 +223,3 @@ plot.axis.minor_tick_in = -3
 plot.axis.minor_tick_out = 2
 curdoc().add_root(plot)
 show(plot)
-
