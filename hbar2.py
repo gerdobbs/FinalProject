@@ -75,6 +75,7 @@ for i in rootInstance.iterfind('instance'):
 
 #Creare a list for the team associated with each event and a colour for that team
 team_list = []
+team_color =['Lime','Black']
 for code in all_codes:
     if team2 in code:
         colors.append("Black")
@@ -162,10 +163,6 @@ hover = HoverTool(tooltips="""
 taptool = TapTool(callback=callback)
 xdr = DataRange1d()
 ydr = DataRange1d()
-
-
-
-
 #plot = Plot(
   #  title=None, x_range= Range1d(plot_start-5,plot_end+5), y_range=Range1d(0,len(codes_set)+2), plot_width=900, plot_height=400,
    # h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
@@ -184,39 +181,37 @@ plot.add_tools(ZoomInTool())
 glyph = HBar(y="y", right="x", left="left", height=0.5, fill_color="colors")
 plot.add_glyph(source, glyph)
 
-
 xaxis = LinearAxis()
 plot.add_layout(xaxis, 'below')
 yaxis = LinearAxis()
-#plot.add_layout(yaxis, 'left')
 plot.add_layout(Grid(dimension=0, ticker=xaxis.ticker))
 plot.add_layout(Grid(dimension=1, ticker=yaxis.ticker))
 
 yaxis_offset = 0.5
 code_index = len(codes_list)-1
-print(codes_list)
 for code in codes_list:
-    text = Text(x=-15,y=yaxis_offset,text=[codes_list[code_index][0:20]],text_font_size = "4pt", text_font_style = "normal",
+    text = Text(x=-150,y=yaxis_offset,text=[codes_list[code_index][0:30]],text_font_size = "4pt", text_font_style = "normal",
                 text_color= "Black",text_baseline="alphabetic")
     plot.add_glyph(text)
     yaxis_offset += 1
     code_index -= 1
-
-title1 = Text(x=-0,y=40,text=[title],text_font_size = "8pt", text_font_style = "bold",
-              text_alpha=1.0,text_font='helvetica',text_color= "Black",text_baseline="alphabetic")
-plot.add_glyph(title1)
+home_title = Text(x=-150,y=40,text=[team1],text_font_size = "8pt", text_font_style = "bold",
+              text_alpha=1.0,text_font='helvetica',text_color= team_color[0],text_baseline="alphabetic")
+versus = Text(x=0,y=40,text=['v'],text_font_size = "8pt", text_font_style = "bold",
+              text_alpha=1.0,text_font='helvetica',text_color= 'White',text_baseline="alphabetic")
+away_title = Text(x=70,y=40,text=[team2],text_font_size = "8pt", text_font_style = "bold",
+              text_alpha=1.0,text_font='helvetica',text_color= team_color[1],text_baseline="alphabetic")
+plot.add_glyph(home_title)
+plot.add_glyph(versus)
+plot.add_glyph(away_title)
 plot.ygrid.grid_line_color = "navy"
 plot.ygrid.minor_grid_line_color = 'navy'
 plot.ygrid.minor_grid_line_alpha = 0.1
-
 plot.ygrid.grid_line_alpha = 0.1
-#plot.ygrid.grid_line_dash = [6, 4]
 plot.xgrid.grid_line_color = None
-#plot.ygrid.grid_line_color = None
 plot.axis.major_tick_out = 3
 plot.axis.minor_tick_in = -3
 plot.axis.minor_tick_out = 2
-
 curdoc().add_root(plot)
 show(plot)
 
