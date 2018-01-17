@@ -128,7 +128,7 @@ data = {'x': all_ends, 'y': all_counts, 'left': all_starts, 'colors': colors, 'a
 source = ColumnDataSource(data)
 # Create a html Div to contain the video
 div = Div(text="""<video id="myVideo" width="540" height="310" controls>
-  <source id="mySrc" src="test.mp4" type="video/mp4">Your browser does not support HTML5 video.
+  <source id="mySrc" src="Video_test.mp4" type="video/mp4">Your browser does not support HTML5 video.
 </video>""", width=840, height=310)
 div1 = Div(width=800)
 
@@ -166,7 +166,8 @@ def display_event(div, attributes=[]):
         }
 
        lines = "Start = "+selected_left+"ms ,";
-       div1.text = lines;
+       
+       //div1.text = lines;
         //div1.text = "Start = "+selected_left+"ms ," +"/n"+ "End = "+selected_x+"ms , Code = " + selected_code+" , Team = "+selected_team
         //window.alert("Start = "+selected_left+"ms , End = "+selected_x+"ms , Code = " + selected_code+" , Team = "+selected_team)
         //for (var i = 0; i < data['x'].length; ++i){
@@ -192,10 +193,17 @@ def display_event(div, attributes=[]):
         var text = div.text.concat(line);
         var lines = text.split("\\n")
         if ( lines.length > 35 ) { lines.shift(); }
-
+        //Get start & end times of video from left & right values of hbar (4266)
+        var start = ((parseInt(selected_left))/100).toString();
+        // duration = 10;
+        var duration = (parseInt(selected_x)-parseInt(selected_left))/10;
+        var end = ((parseInt(selected_left))/100+ duration).toString();
+        //var end = (((parseInt(selected_left))/100)+5).toString();
+        
+        //div1.text = selected_left;
         var srce = document.getElementById("mySrc");
-        srce.src="test.mp4#t=25,30";
-        srce.currentTime = 50;
+        srce.src="Video_test.mp4#t="+start+","+end;
+        //srce.currentTime = 50;
         var vid = document.getElementById("myVideo");
         vid.load();
         vid.play();
@@ -272,6 +280,6 @@ plot.axis.minor_tick_out = 2
 
 button = Button(label="Button", button_type="success")
 
-layout = row(plot, column(button, div, div1))
+layout = row(plot, column(div, div1))
 button.js_on_event(events.ButtonClick, display_event(div))
 show(layout)
