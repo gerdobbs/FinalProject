@@ -12,7 +12,7 @@ file = 'IREvNZL Events.xml'
 team1 = file[0:3]
 team2 = file[4:7]
 title = file[0:7]
-pp = pprint.PrettyPrinter(indent=4)
+# pp = pprint.PrettyPrinter(indent=4)
 root = etree.parse(file)
 doc = root.getroot()
 rootInstance = root.find('ALL_INSTANCES')
@@ -35,6 +35,50 @@ all_starts = []
 all_ends = []
 plot_start = 200000
 plot_end = 0
+team_list = []
+team_color = ['Lime', 'Black']
+counts_list = []
+count1 = 0
+position = 0
+
+
+# Get centre point between start and end times. Used to plot rect
+def centre(a, b):
+    list = [(float(a[i]) + float(b[i])) / 2 for i in range(len(a))]
+    return list
+
+
+# Get the width of each rect by subtracting end time from start time
+def get_width(a, b):
+    list = [(float(b[i]) - float(a[i])) / 1 for i in range(len(a))]
+    return list
+
+
+# Creare a list for the team associated with each event and a colour for that team
+def assign_team_colors(t1, t2):
+    for code in all_codes:
+        if t2 in code:
+            colors.append("Black")
+            team_list.append(team2)
+        elif t1 in code:
+            colors.append("Lime")
+            team_list.append(team1)
+        else:
+            colors.append(("White"))
+            team_list.append('Neither')
+
+
+# Make a list of the total number of each code
+def create_list_of_codes(all_codes, position, count1):
+    for code in all_codes:
+        check_code = code  # g is the code to check through resr of list for in order to count
+        for code1 in all_codes[position:len(all_codes)]:  # loop through rest of list for same code
+            if code1 == check_code:  # if code matches count it
+                count1 += 1
+        position = position + count1
+        counts_list.extend([count1] * count1)
+        count1 = 0
+
 
 # Get the count of how many distinctive codes there are
 for i in rootInstance.iterfind('instance'):
@@ -73,51 +117,12 @@ for i in rootInstance.iterfind('instance'):
         count = 0
         overall_code_count -= 1
 
-# Creare a list for the team associated with each event and a colour for that team
-team_list = []
-team_color =['Lime','Black']
-for code in all_codes:
-    if team2 in code:
-        colors.append("Black")
-        team_list.append(team2)
-    elif team1 in code:
-        colors.append("Lime")
-        team_list.append(team1)
-    else:
-        colors.append(("White"))
-        team_list.append('Neither')
-
-
-# Get centre point between start and end times. Used to plot rect
-def centre(a, b):
-    list = [(float(a[i]) + float(b[i])) / 2 for i in range(len(a))]
-    return list
-
-
-# Get the width of each rect by subtracting end time from start time
-def get_width(a, b):
-    list = [(float(b[i]) - float(a[i])) / 1 for i in range(len(a))]
-    return list
-
-
+assign_team_colors(team1, team2)
 # Make a list of the total number of each code
-counts_list = []
-count1 = 0
-position = 0
-for code in all_codes:
-    g = code  # g is the code to check through resr of list for in order to count
-    for code1 in all_codes[position:len(all_codes)]:  # loop through rest of list for same code
-        if code1 == g:  # if code matches count it
-            count1 += 1
-            # position += position
-    position = position + count1
-    counts_list.extend([count1] * count1)
-    count1 = 0
+create_list_of_codes(all_codes, position, count1)
 # Set up ColumnDataSource to be used in plotting graph
-x = all_ends
-code = all_counts
-left = all_starts
-data = {'x': x, 'y': code, 'left': left, 'colors': colors, 'all_codes': all_codes, 'counts_list': counts_list,
+data = {'x': all_ends, 'y': all_counts, 'left': all_starts, 'colors': colors, 'all_codes': all_codes,
+        'counts_list': counts_list,
         'team_list': team_list}
 source = ColumnDataSource(data)
 # Callbach function used when graph ber is clicked.
@@ -173,9 +178,9 @@ ydr = DataRange1d()
 # plot = Plot(
 #  title=None, x_range= Range1d(plot_start-5,plot_end+5), y_range=Range1d(0,len(codes_set)+2), plot_width=900, plot_height=400,
 # h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
-plot_height = 250
+plot_height = 550
 plot = Plot(
-    title=None, x_range=xdr, y_range=ydr, plot_width=850, plot_height=plot_height,
+    title=None, x_range=xdr, y_range=ydr, plot_width=1100, plot_height=plot_height,
     h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="left", background_fill_color="green")
 
 plot.add_tools(taptool)
@@ -204,11 +209,11 @@ for code in codes_list:
     plot.add_glyph(text)
     yaxis_offset += 1
     code_index -= 1
-home_title = Text(x=-150, y=plot_height - 210, text=[team1], text_font_size="8pt", text_font_style="bold",
+home_title = Text(x=-150, y=40, text=[team1], text_font_size="8pt", text_font_style="bold",
                   text_alpha=1.0, text_font='helvetica', text_color=team_color[0], text_baseline="alphabetic")
-versus = Text(x=0, y=plot_height - 210, text=['v'], text_font_size="8pt", text_font_style="bold",
+versus = Text(x=0, y=40, text=['v'], text_font_size="8pt", text_font_style="bold",
               text_alpha=1.0, text_font='helvetica', text_color='White', text_baseline="alphabetic")
-away_title = Text(x=70, y=plot_height - 210, text=[team2], text_font_size="8pt", text_font_style="bold",
+away_title = Text(x=70, y=40, text=[team2], text_font_size="8pt", text_font_style="bold",
                   text_alpha=1.0, text_font='helvetica', text_color=team_color[1], text_baseline="alphabetic")
 plot.add_glyph(home_title)
 plot.add_glyph(versus)
