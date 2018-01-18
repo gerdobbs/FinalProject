@@ -1,6 +1,6 @@
 from bokeh.models import Text, ColumnDataSource, DataRange1d, Range1d, Plot, LinearAxis, Grid, SingleIntervalTicker, \
     ResetTool, BoxSelectTool, CrosshairTool, HoverTool, BoxZoomTool, WheelPanTool, WheelZoomTool, TapTool, PanTool, \
-    CustomJS, ZoomInTool, ZoomOutTool, Button, Div
+    CustomJS, ZoomInTool, ZoomOutTool, Button, Div, Tabs
 from bokeh.models.glyphs import Rect, HBar
 from bokeh.io import curdoc, output_notebook, show
 from bokeh.plotting import figure, curdoc, output_file, show
@@ -128,7 +128,7 @@ data = {'x': all_ends, 'y': all_counts, 'left': all_starts, 'colors': colors, 'a
 source = ColumnDataSource(data)
 # Create a html Div to contain the video
 div = Div(text="""<video id="myVideo" width="540" height="310" controls>
-  <source id="mySrc" src="Video_test.mp4" type="video/mp4">Your browser does not support HTML5 video.
+  <source id="mySrc" src="IrevCan.mp4" type="video/mp4">Your browser does not support HTML5 video.
 </video>""", width=840, height=310)
 div1 = Div(width=800)
 
@@ -194,15 +194,15 @@ def display_event(div, attributes=[]):
         var lines = text.split("\\n")
         if ( lines.length > 35 ) { lines.shift(); }
         //Get start & end times of video from left & right values of hbar (4266)
-        var start = ((parseInt(selected_left))/100).toString();
+        var start = ((parseInt(selected_left))).toString();
         // duration = 10;
-        var duration = (parseInt(selected_x)-parseInt(selected_left))/10;
-        var end = ((parseInt(selected_left))/100+ duration).toString();
-        //var end = (((parseInt(selected_left))/100)+5).toString();
+        var duration = (parseInt(selected_x)-parseInt(selected_left));
+        //var end = ((parseInt(selected_left))+ duration).toString();
+        var end = ((parseInt(selected_x))).toString();
         
         //div1.text = selected_left;
         var srce = document.getElementById("mySrc");
-        srce.src="Video_test.mp4#t="+start+","+end;
+        srce.src="IrevCan.mp4#t="+start+","+end;
         //srce.currentTime = 50;
         var vid = document.getElementById("myVideo");
         vid.load();

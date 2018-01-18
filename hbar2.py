@@ -181,7 +181,7 @@ ydr = DataRange1d()
 plot_height = 550
 plot = Plot(
     title=None, x_range=xdr, y_range=ydr, plot_width=1100, plot_height=plot_height,
-    h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="left", background_fill_color="green")
+    h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above", background_fill_color="green")
 
 plot.add_tools(taptool)
 plot.add_tools(ResetTool())
