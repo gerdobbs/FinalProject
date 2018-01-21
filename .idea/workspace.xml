@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a462b09-b2ec-4463-9d35-b3cfb0b87088" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FRAvJAP.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalWithVideo.py" afterPath="$PROJECT_DIR$/FinalWithVideo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hbar2.py" afterPath="$PROJECT_DIR$/hbar2.py" />
@@ -15,37 +16,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="hbar2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hbar2.py">
+      <file leaf-file-name="FinalWithVideoCopy.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FinalWithVideoCopy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="183" column="77" lean-forward="false" selection-start-line="183" selection-start-column="77" selection-end-line="183" selection-end-column="77" />
+            <state relative-caret-position="177">
+              <caret line="358" column="44" lean-forward="false" selection-start-line="358" selection-start-column="44" selection-end-line="358" selection-end-column="44" />
               <folding>
-                <element signature="e#0#274#0" expanded="true" />
+                <element signature="e#0#336#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinalWithVideo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FinalWithVideo.py">
+      <file leaf-file-name="FinalTeamsSep.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalTeamsSep.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="196" column="46" lean-forward="false" selection-start-line="196" selection-start-column="46" selection-end-line="196" selection-end-column="46" />
+            <state relative-caret-position="-270">
+              <caret line="367" column="63" lean-forward="true" selection-start-line="364" selection-start-column="0" selection-end-line="367" selection-end-column="63" />
               <folding>
-                <element signature="e#0#293#0" expanded="true" />
+                <element signature="e#0#336#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IREvNZL Events.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IREvNZL Events.xml">
+      <file leaf-file-name="NewFinal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NewFinal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="4282">
+              <caret line="240" column="30" lean-forward="true" selection-start-line="240" selection-start-column="30" selection-end-line="240" selection-end-column="30" />
               <folding>
-                <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
+                <element signature="e#0#321#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,9 +67,20 @@
       <find>title</find>
       <find>displayV</find>
       <find>test</find>
-      <find>hbar</find>
-      <find>mp4</find>
       <find>tools</find>
+      <find>mp4</find>
+      <find>xml</find>
+      <find>toolbar</find>
+      <find>all_codes</find>
+      <find>hbar</find>
+      <find>home_code_count</find>
+      <find>colorswhite</find>
+      <find>codes_list</find>
+      <find>Green</find>
+      <find>all_counts</find>
+      <find>colors</find>
+      <find>team_list</find>
+      <find>selected_team</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,8 +106,16 @@
         <option value="$PROJECT_DIR$/curveSlider.py" />
         <option value="$PROJECT_DIR$/hbarwith.py" />
         <option value="$PROJECT_DIR$/VideoWork.py" />
-        <option value="$PROJECT_DIR$/FinalWithVideo.py" />
         <option value="$PROJECT_DIR$/hbar2.py" />
+        <option value="$PROJECT_DIR$/FinalWithVideo2.py" />
+        <option value="$PROJECT_DIR$/testing.py" />
+        <option value="$PROJECT_DIR$/periodicTable.py" />
+        <option value="$PROJECT_DIR$/togglebutton.py" />
+        <option value="$PROJECT_DIR$/bandColors.py" />
+        <option value="$PROJECT_DIR$/NewFinal.py" />
+        <option value="$PROJECT_DIR$/FinalTeamsSep.py" />
+        <option value="$PROJECT_DIR$/FinalWithVideo.py" />
+        <option value="$PROJECT_DIR$/FinalWithVideoCopy.py" />
       </list>
     </option>
   </component>
@@ -119,7 +139,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,6 +150,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -149,11 +169,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dobbs\PycharmProjects\FinalProject" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dobbs\Anaconda3\Lib\site-packages" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dobbs\PycharmProjects\FinalProject" />
       <recent name="C:\Users\dobbs\Anaconda3\Lib\site-packages" />
     </key>
   </component>
@@ -169,7 +189,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.FinalWithVideo">
+  <component name="RunManager" selected="Python.FinalWithVideoCopy">
+    <configuration name="FinalTeamsSep" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FinalProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FinalTeamsSep.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="FinalWithVideo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -187,7 +224,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="VideoWork" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="FinalWithVideoCopy" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -199,12 +236,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FinalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VideoWork.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FinalWithVideoCopy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="curveSlider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="NewFinal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -216,12 +253,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FinalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curveSlider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NewFinal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="hbar2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="bandColors" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -233,42 +270,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FinalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hbar2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="hbarwith" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FinalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hbarwith.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bandColors.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.hbarwith" />
-      <item index="1" class="java.lang.String" itemvalue="Python.curveSlider" />
-      <item index="2" class="java.lang.String" itemvalue="Python.hbar2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.VideoWork" />
-      <item index="4" class="java.lang.String" itemvalue="Python.FinalWithVideo" />
+      <item index="0" class="java.lang.String" itemvalue="Python.bandColors" />
+      <item index="1" class="java.lang.String" itemvalue="Python.FinalWithVideo" />
+      <item index="2" class="java.lang.String" itemvalue="Python.NewFinal" />
+      <item index="3" class="java.lang.String" itemvalue="Python.FinalTeamsSep" />
+      <item index="4" class="java.lang.String" itemvalue="Python.FinalWithVideoCopy" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.FinalWithVideo" />
-        <item index="1" class="java.lang.String" itemvalue="Python.VideoWork" />
-        <item index="2" class="java.lang.String" itemvalue="Python.hbarwith" />
-        <item index="3" class="java.lang.String" itemvalue="Python.hbar2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.curveSlider" />
+        <item index="0" class="java.lang.String" itemvalue="Python.FinalWithVideoCopy" />
+        <item index="1" class="java.lang.String" itemvalue="Python.FinalWithVideo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.FinalTeamsSep" />
+        <item index="3" class="java.lang.String" itemvalue="Python.NewFinal" />
+        <item index="4" class="java.lang.String" itemvalue="Python.bandColors" />
       </list>
     </recent_temporary>
   </component>
@@ -325,30 +345,37 @@
       <option name="project" value="LOCAL" />
       <updated>1516217442917</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="New video added.">
+      <created>1516302108303</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1516302108303</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16270271" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17351352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24970132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39904422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39904422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -358,17 +385,17 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24970132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32855436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17351352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39904422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39904422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -381,55 +408,14 @@
     <MESSAGE value="Video playing from specified position" />
     <MESSAGE value="Video playing from selected position" />
     <MESSAGE value="End time added to video play." />
-    <option name="LAST_COMMIT_MESSAGE" value="End time added to video play." />
+    <MESSAGE value="New video added." />
+    <option name="LAST_COMMIT_MESSAGE" value="New video added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/videotest2.py" />
-    <entry file="file://$PROJECT_DIR$/videotest3.py" />
-    <entry file="file://$PROJECT_DIR$/videotest4.py" />
-    <entry file="file://$PROJECT_DIR$/videotest5.py" />
-    <entry file="file://$PROJECT_DIR$/IREvNZL Events.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103572">
-          <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hbarWithVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3672">
-          <caret line="144" column="14" lean-forward="true" selection-start-line="139" selection-start-column="8" selection-end-line="144" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hbar2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4698">
-          <caret line="182" column="55" lean-forward="false" selection-start-line="182" selection-start-column="55" selection-end-line="182" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#274#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videotest2.py" />
-    <entry file="file://$PROJECT_DIR$/IREvNZL Events.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103572">
-          <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/videotest1.py" />
     <entry file="file://$PROJECT_DIR$/hbar2.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -446,9 +432,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -467,9 +451,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -487,9 +469,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -507,9 +487,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -527,9 +505,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -547,9 +523,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="false" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -567,9 +541,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103572">
           <caret line="3836" column="12" lean-forward="true" selection-start-line="3836" selection-start-column="12" selection-end-line="3836" selection-end-column="12" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -587,9 +559,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108324">
           <caret line="4012" column="6" lean-forward="false" selection-start-line="4012" selection-start-column="0" selection-end-line="4013" selection-end-column="0" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -607,9 +577,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108324">
           <caret line="4012" column="6" lean-forward="false" selection-start-line="4012" selection-start-column="0" selection-end-line="4013" selection-end-column="0" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -627,9 +595,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108324">
           <caret line="4012" column="6" lean-forward="false" selection-start-line="4012" selection-start-column="0" selection-end-line="4013" selection-end-column="0" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -647,9 +613,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108324">
           <caret line="4012" column="6" lean-forward="true" selection-start-line="4012" selection-start-column="0" selection-end-line="4013" selection-end-column="0" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -667,9 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -684,13 +646,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/column.py" />
-    <entry file="file://$PROJECT_DIR$/hbarWithVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6156">
-          <caret line="236" column="39" lean-forward="false" selection-start-line="236" selection-start-column="39" selection-end-line="236" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/videotest5.py" />
     <entry file="file://$PROJECT_DIR$/videotest2.py" />
     <entry file="file://$PROJECT_DIR$/videotest4.py" />
@@ -718,32 +673,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalWithVideo.py">
+    <entry file="file://$PROJECT_DIR$/hbar2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="196" column="46" lean-forward="false" selection-start-line="196" selection-start-column="46" selection-end-line="196" selection-end-column="46" />
+        <state relative-caret-position="0">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#0#293#0" expanded="true" />
+            <element signature="e#0#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalWithVideo2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IREvNZL Events.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        <state relative-caret-position="54">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FRAvJAP.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hbarWithVideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="83" column="35" lean-forward="false" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
           <folding>
-            <element signature="n#instance#0;n#ALL_INSTANCES#0;n#file#0;n#!!top" expanded="false" />
+            <element signature="e#0#274#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hbar2.py">
+    <entry file="file://$PROJECT_DIR$/testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="183" column="77" lean-forward="false" selection-start-line="183" selection-start-column="77" selection-end-line="183" selection-end-column="77" />
+        <state relative-caret-position="297">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <element signature="e#0#274#0" expanded="true" />
+            <element signature="e#14#47#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/periodicTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1971">
+          <caret line="73" column="1" lean-forward="false" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/togglebutton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bandColors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="70" lean-forward="false" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewFinal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4282">
+          <caret line="240" column="30" lean-forward="true" selection-start-line="240" selection-start-column="30" selection-end-line="240" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalWithVideo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="387" column="12" lean-forward="true" selection-start-line="378" selection-start-column="0" selection-end-line="387" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalTeamsSep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="367" column="63" lean-forward="true" selection-start-line="364" selection-start-column="0" selection-end-line="367" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalWithVideoCopy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="358" column="44" lean-forward="false" selection-start-line="358" selection-start-column="44" selection-end-line="358" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#336#0" expanded="true" />
           </folding>
         </state>
       </provider>

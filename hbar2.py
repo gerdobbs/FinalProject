@@ -8,6 +8,7 @@ from bokeh.layouts import gridplot
 import xml.etree.ElementTree as etree
 import pprint
 
+
 file = 'IREvNZL Events.xml'
 team1 = file[0:3]
 team2 = file[4:7]

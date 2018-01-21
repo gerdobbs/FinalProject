@@ -1,6 +1,6 @@
 from bokeh.models import Text, ColumnDataSource, DataRange1d, Range1d, Plot, LinearAxis, Grid, SingleIntervalTicker, \
     ResetTool, BoxSelectTool, CrosshairTool, HoverTool, BoxZoomTool, WheelPanTool, WheelZoomTool, TapTool, PanTool, \
-    CustomJS, ZoomInTool, ZoomOutTool, Button, Div, Tabs
+    CustomJS, ZoomInTool, ZoomOutTool, Button, Div, Tabs, WheelPanTool,WheelZoomTool
 from bokeh.models.glyphs import Rect, HBar
 from bokeh.io import curdoc, output_notebook, show
 from bokeh.plotting import figure, curdoc, output_file, show
@@ -9,6 +9,7 @@ from bokeh import events
 import xml.etree.ElementTree as etree
 import cv2
 
+Video_file = 'IrevCan.mp4'
 file = 'IREvNZL Events.xml'
 team1 = file[0:3]
 team2 = file[4:7]
@@ -41,6 +42,24 @@ team_color = ['Lime', 'Black']
 counts_list = []
 count1 = 0
 position = 0
+home_team = []
+home_start = []
+home_end = []
+home_code_count = []
+home_exclusive = []
+away_team = []
+away_start = []
+away_end = []
+away_code_count = []
+away_exclusive = []
+neither_team = []
+neither_start = []
+neither_end = []
+neither_code_count = []
+neither_exclusive = []
+new_all_code_list = []
+temp_list = []
+temp_pos =0
 
 
 # Get centre point between start and end times. Used to plot rect
@@ -118,6 +137,83 @@ for i in rootInstance.iterfind('instance'):
         count = 0
         overall_code_count -= 1
 
+pos=0
+for team in all_codes:
+    if team1 in team:
+        home_team.append(team)
+        home_start.append(all_starts[pos])
+        home_end.append(all_ends[pos])
+        #home_code_count.append(all_counts[pos])
+    elif team2 in team:
+        away_team.append(team)
+        away_start.append(all_starts[pos])
+        away_end.append(all_ends[pos])
+        #away_code_count.append(all_counts[pos])
+    else:
+        neither_team.append(team)
+        neither_start.append(all_starts[pos])
+        neither_end.append(all_ends[pos])
+       # neither_code_count.append(all_counts[pos])
+
+    pos +=1
+
+total_codes= []
+total_codes.extend(home_team)
+total_codes.extend(away_team)
+total_codes.extend(neither_team)
+print("TotalCodes",len(total_codes),total_codes)
+total_starts = []
+total_starts.extend(home_start)
+total_starts.extend(away_start)
+total_starts.extend(neither_start)
+print("Starts",len(total_starts),total_starts)
+total_ends = []
+total_ends.extend(home_end)
+total_ends.extend(away_end)
+total_ends.extend(neither_end)
+print("Ends",len(total_ends),total_ends)
+exclusive_codes_list = []
+for code in total_codes:
+    if code not in exclusive_codes_list:
+        exclusive_codes_list.append(code)
+print("ExclusiveCodes",len(exclusive_codes_list),exclusive_codes_list)
+
+total_codes= []
+total_codes.extend(home_team)
+total_codes.extend(away_team)
+total_codes.extend(neither_team)
+print("TotalCodes",len(total_codes),total_codes)
+total_starts = []
+total_starts.extend(home_start)
+total_starts.extend(away_start)
+total_starts.extend(neither_start)
+print("Starts",len(total_starts),total_starts)
+total_ends = []
+total_ends.extend(home_end)
+total_ends.extend(away_end)
+total_ends.extend(neither_end)
+print("Ends",len(total_ends),total_ends)
+
+exclusive_codes_list = []
+count_each_code = 0
+
+temp_list1=[]
+for code in total_codes:
+    if code not in exclusive_codes_list:
+        exclusive_codes_list.append(code)
+
+print("ExclusiveCodes",len(exclusive_codes_list),exclusive_codes_list)
+code_number = len(exclusive_codes_list)
+for code in exclusive_codes_list:
+    for code1 in total_codes:
+        if code1 == code:
+            count_each_code+=1
+
+    temp_list1.extend([code_number] * count_each_code)
+    count_each_code = 0
+    code_number -= 1
+print("TempList",len(temp_list1),temp_list1)
+
 assign_team_colors(team1, team2)
 # Make a list of the total number of each code
 create_list_of_codes(all_codes, position, count1)
@@ -128,7 +224,7 @@ data = {'x': all_ends, 'y': all_counts, 'left': all_starts, 'colors': colors, 'a
 source = ColumnDataSource(data)
 # Create a html Div to contain the video
 div = Div(text="""<video id="myVideo" width="540" height="310" controls>
-  <source id="mySrc" src="IrevCan.mp4" type="video/mp4">Your browser does not support HTML5 video.
+  <source id="mySrc" src="IREvNZL.mp4" type="video/mp4">Your browser does not support HTML5 video.
 </video>""", width=840, height=310)
 div1 = Div(width=800)
 
@@ -202,7 +298,7 @@ def display_event(div, attributes=[]):
         
         //div1.text = selected_left;
         var srce = document.getElementById("mySrc");
-        srce.src="IrevCan.mp4#t="+start+","+end;
+        srce.src="IREvNZL.mp4#t="+start+","+end;
         //srce.currentTime = 50;
         var vid = document.getElementById("myVideo");
         vid.load();
@@ -231,17 +327,20 @@ ydr = DataRange1d()
 # h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above",background_fill_color="green")
 plot_height = 550
 plot = Plot(
-    title=None, x_range=xdr, y_range=ydr, plot_width=800, plot_height=plot_height,
-    h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="left", background_fill_color="green")
+    title=None, x_range=xdr, y_range=ydr, plot_width=650
+    , plot_height=plot_height,
+    h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above", background_fill_color="green")
 
 plot.add_tools(taptool)
 plot.add_tools(ResetTool())
 plot.add_tools(hover)
 # plot.add_tools(BoxSelectTool(dimensions="width"))
+plot.add_tools(WheelPanTool())
 plot.add_tools(BoxZoomTool())
 plot.add_tools(CrosshairTool())
 plot.add_tools(ZoomOutTool())
 plot.add_tools(ZoomInTool())
+plot.add_tools(WheelZoomTool())
 glyph = HBar(y="y", right="x", left="left", height=0.5, fill_color="colors")
 plot.add_glyph(source, glyph)
 
@@ -254,7 +353,7 @@ plot.add_layout(Grid(dimension=1, ticker=yaxis.ticker))
 yaxis_offset = 0.5
 code_index = len(codes_list) - 1
 for code in codes_list:
-    text = Text(x=-150, y=yaxis_offset, text=[codes_list[code_index][0:30]], text_font_size="4pt",
+    text = Text(x=-150, y=yaxis_offset, text=[codes_list[code_index][0:30]], text_font_size="6pt",
                 text_font_style="normal",
                 text_color="Black", text_baseline="alphabetic")
     plot.add_glyph(text)
@@ -278,6 +377,10 @@ plot.axis.major_tick_out = 3
 plot.axis.minor_tick_in = -3
 plot.axis.minor_tick_out = 2
 
+
+
+plot.ygrid.band_fill_alpha = 0.1
+plot.ygrid.band_fill_color = "navy"
 button = Button(label="Button", button_type="success")
 
 layout = row(plot, column(div, div1))
