@@ -150,18 +150,9 @@ callback = CustomJS(args=dict(source=source), code="""
         else{
             team="Neither"
         }
-        window.alert("Start = "+selected_left+"ms , End = "+selected_x+"ms , Code = " + selected_code+" , Team = "+selected_team)
-        //for (var i = 0; i < data['x'].length; ++i){
-           // if(data['left'][i] == selected_left){
-                // add all points to selected if their ids coincide with original
-                // glyph that was clicked.
-               // select_inds.push(i)
-            //}
-       // }
+        window.alert("Start = "+selected_left+"ms , End = "+selected_x+"ms , Code = " +
+         selected_code+" , Team = "+team)
     }
-    //source.selected['1d']['indices'] = select_inds 
-   // source.change.emit();
-
     """)
 # Display details whwn graph bar is hovered over. Hover Tool.
 hover = HoverTool(tooltips="""
@@ -173,7 +164,7 @@ hover = HoverTool(tooltips="""
         </div>
     """)
 
-taptool = TapTool(callback=callback)
+
 xdr = DataRange1d()
 ydr = DataRange1d()
 # plot = Plot(
@@ -183,11 +174,10 @@ plot_height = 550
 plot = Plot(
     title=None, x_range=xdr, y_range=ydr, plot_width=1100, plot_height=plot_height,
     h_symmetry=False, v_symmetry=False, min_border=0, toolbar_location="above", background_fill_color="green")
-
+taptool = TapTool(callback=callback)
 plot.add_tools(taptool)
 plot.add_tools(ResetTool())
 plot.add_tools(hover)
-# plot.add_tools(BoxSelectTool(dimensions="width"))
 plot.add_tools(BoxZoomTool())
 plot.add_tools(CrosshairTool())
 plot.add_tools(ZoomOutTool())
